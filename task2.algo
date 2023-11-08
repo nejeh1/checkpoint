@@ -1,0 +1,38 @@
+PROCEDURE inssort(arr: array)
+VAR
+    i: integer
+BEGIN
+    FOR i FROM 1 TO LENGTH(arr) DO
+        WRITE("Give me the card ", i)
+        READ(arr[i])
+    END_FOR
+END
+
+ALGORITHM algorithm_name
+VAR
+    i, j: integer;
+    currentCard: integer;  
+BEGIN
+    inssort(arr)
+
+    IF i > j THEN
+        FOR i FROM 2 TO LENGTH(arr) DO
+            currentCard = arr[i]
+            j = i - 1
+
+            WHILE j >= 1 AND arr[j] > currentCard DO
+                arr[j + 1] = arr[j]
+                j = j - 1
+            END_WHILE
+
+            arr[j + 1] = currentCard
+        END_FOR
+        WRITE("Sorted cards:")
+        FOR i FROM 1 TO LENGTH(arr) DO
+            IF i > 1 THEN
+                WRITE(", "); 
+            END_IF
+            WRITE(arr[i])
+        END_FOR
+    END_IF
+END

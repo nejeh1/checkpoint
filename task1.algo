@@ -1,14 +1,26 @@
-PROCEDURE (parameters)
+PROCEDURE remptab(v)
 VAR
-    v1,v2,y,x:integer
+    i:integer
 BEGIN
-    FOR i FROM 0 TO n STEP 1  DO
-        
+    FOR i FROM 0 TO 1  DO
+        write("give case ",i,"v"i+1);
+        read(v[i])
     END_FOR
 END
-ALGORITHM produit
+FUNCTION calculproduct(v1,v2) : integer
 VAR
-  
+    x,y:integer
 BEGIN
- 
+    x[0]*y[1]-x[1]*y[0]
+    RETURN integer ;
+END
+ALGORITHM dotproduct
+VAR
+   v1 : ARRAY_OF integer[2];
+   v2 : ARRAY_OF integer[2];
+BEGIN
+    remptab(v1);
+    remptab(v2);
+    product:=calculproduct(v1,v2);
+    write ("the product of v1,v2:",product);
 END
